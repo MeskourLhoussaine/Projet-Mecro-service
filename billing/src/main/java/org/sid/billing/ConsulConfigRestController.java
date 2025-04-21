@@ -13,6 +13,8 @@ import java.util.Map;
 public class ConsulConfigRestController {
 @Autowired
     private MyConsulConfig myConsulConfig;
+@Autowired
+private MyVaultConfig myVaultConfig;
 
 
    // private MyConsulConfig myConsulConfig;
@@ -21,9 +23,15 @@ public class ConsulConfigRestController {
   ///  @Value("${token.refreshTokenTimeout}")
    // private long refreshTokenTimeout;
 
-    @GetMapping("/myConfig")
+  /*  @GetMapping("/myConfig")
     public MyConsulConfig myConsulConfig() {
 return myConsulConfig;
+    }*/
+
+
+    @GetMapping("/myConfig")
+    public Map<String,Object> myConsulConfig() {
+        return Map.of("consulConfig", myConsulConfig, "vaultConfig", myVaultConfig);
     }
 
 

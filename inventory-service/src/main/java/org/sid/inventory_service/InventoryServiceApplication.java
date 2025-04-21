@@ -22,7 +22,7 @@ public class InventoryServiceApplication {
 	@Bean
 	CommandLineRunner start(ProductRepository productRepository){
 		return args -> {
-
+//
 			Random random=new Random();
 			for (int i = 1; i <10 ; i++) {
 				productRepository.saveAll(List.of(
